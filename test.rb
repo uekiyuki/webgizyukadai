@@ -7,7 +7,7 @@ module WEBrick
 end
 
 server = WEBrick::HTTPServer.new({
-  :DocumentRoot => '.',
+  :DocumentRoot => './test',
   :CGIInterpreter => WEBrick::HTTPServlet::CGIHandler::Ruby,
   :Port => '3000',
 })
@@ -17,7 +17,7 @@ server = WEBrick::HTTPServer.new({
 
 # WEBrick::HTTPServlet::FileHandlerをWEBrick::HTTPServlet::ERBHandlerに変更する
 # 'test.html'を'test.html.erb'に変更する
-server.mount('/test', WEBrick::HTTPServlet::ERBHandler, 'web技術入門.html.erb')
+server.mount('/', WEBrick::HTTPServlet::ERBHandler, 'web技術入門.html.erb')
 
 server.mount('/goya copy.cgi', WEBrick::HTTPServlet::CGIHandler, 'goya copy.rb')
 # この一行を追記

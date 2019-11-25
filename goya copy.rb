@@ -10,7 +10,7 @@ cgi1.out("type" => "text/html", "charset" => "UTF-8") {
   # HTMLでレスポンスを返却する
   "<html>
     <body>
-      <p>品質が良くないゴーヤの情報は下記になります</p>
+      <p>品質が悪いゴーヤの情報は下記になります</p>
       文字列：#{get}
     </body>
   </html>"
